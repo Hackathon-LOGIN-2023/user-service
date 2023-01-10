@@ -22,7 +22,7 @@ app.use(express.json());
 
 
 //Routes 
-app.use(require('./api/routes/notes.routes'), require('./api/routes/validate-token'));
+app.use(require('./api/routes/notes.routes'));
 app.use(require('./api/routes/users.routes'));
 
 //static files
