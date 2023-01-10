@@ -1,5 +1,7 @@
 const usersCtrl = {};
 
+const passport = require('passport');
+
 usersCtrl.renderSignUpForm = (req, res) =>{
     res.render('users/signup');
 };

@@ -3,6 +3,7 @@ const path = require('path');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const passport = require('passport');
 
 //Initializations
 const app = express();
@@ -14,19 +15,14 @@ app.set('port', process.env.PORT || 4200);
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
-//app.use(methodOverride('_method'));
-app.use(session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
-}));
+
 app.use(express.json());
 
 //Global variables
 
 
 //Routes 
-app.use(require('./api/routes/notes.routes'));
+app.use(require('./api/routes/notes.routes'), require('./api/routes/validate-token'));
 app.use(require('./api/routes/users.routes'));
 
 //static files
