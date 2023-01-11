@@ -10,6 +10,11 @@ const router = Router()
 
 const Note = require('../models/Note');
 
+router.get('/', (req,res)=>{
+
+    res.json({ Text: 'User Services is working!', errorCode: 0, data: true });
+});
+
 router.get('/notes', async (req,res)=>{
         console.log("entra aqui")
         const notes = await Note.find();
