@@ -1,12 +1,6 @@
 const {Router} = require('express')
 const router = Router()
 
-// const { renderNoteForm, 
-//         createNoteForm, 
-//         renderNotes, 
-//         renderEditForm, 
-//         updateNote, 
-//         deleteNote } = require('../controllers/notes.controller');
 
 const Note = require('../models/Note');
 
