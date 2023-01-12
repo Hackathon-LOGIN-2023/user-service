@@ -3,6 +3,8 @@ const router = Router();
 const User = require("../models/User");
 const jwt = require('jsonwebtoken');
 
+
+
 router.post('/api/register', async (req, res) => {
     const status = [];
     const { name, email, password, confirm_password } = req.body;
@@ -37,7 +39,7 @@ router.post('/api/login', async (req, res) => {
         status.push({ Text: 'User not found', errorCode: 4, data: {} });
 
     }
-    else if(user!=undefined && user.password == password){
+    else if(user!=undefined && user.password != password){
         status.push({ Text: 'Invalid Password', errorCode: 5, data: {} });
     }
     else {
